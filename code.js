@@ -61,6 +61,20 @@ getFriends(userId) {
   const user = friends.find((friend) => friend.id === userId);
   return user ? user.friends : [];
   }
-  
-  
+    
+}
+
+// Example usage:
+const movieSystem = new MostPopularMovieSystem();
+movieSystem.addUser(1, ["Movie1", "Movie2", "Movie3"]);
+movieSystem.addUser(2, ["Movie2", "Movie4", "Movie5"]);
+movieSystem.addUser(3, ["Movie1", "Movie3", "Movie6"]);
+
+const userId = 2;
+const mostPopularMovie = movieSystem.getMostPopularMovie(userId);
+
+if (mostPopularMovie) {
+  console.log(`The most popular movie for user ${userId} is ${mostPopularMovie}.`);
+} else {
+  console.log(`No recommendations available for user ${userId}.`);
 }
