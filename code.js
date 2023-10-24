@@ -78,3 +78,16 @@ if (mostPopularMovie) {
 } else {
   console.log(`No recommendations available for user ${userId}.`);
 }
+
+// Output:
+// "The most popular movie for user 2 is Movie1."
+
+// The code will go through the following steps to find the most popular movie for User 2:
+// It checks if User 2 exists in the userMovies object. In this case, User 2 does exist, and their favorite movies are "Movie2," "Movie4," and "Movie5."
+// It collects User 2's favorite movies into the userMovies set: userMovies = {"Movie2", "Movie4", "Movie5"}.
+// It finds User 2's friends by calling the getFriends method. In this example, User 2's friends are [1, 5, 6].
+// It collects the movie preferences of User 2's friends and adds them to the friendMovies set. This includes the favorite movies of User 1, User 5, and User 6.
+// It calculates the recommendedMovies by filtering out movies that User 2 already likes. In this case, only User1 movie preference are given and "Movie2" is out because it's already in user list.
+// It counts how many times each of these recommended movies appears in User 2's friends' preferences. In this case,user1 friendlist is { id: 1, friends: [2, 3, 4] } and  "Movie1" appear twice among User 1's friends that is friend of 1's.
+// It selects the most popular movie from the movieCounts object. Since "Movie1" appear twice and rest all appear once, it selects "Movie1."
+// Finally, it returns "Movie1" as the most popular movie for User 2.
